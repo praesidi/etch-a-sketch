@@ -18,12 +18,15 @@
     <main class="main">
         <div class="container">
             <div class="interface">
-                <input type="color" class="color-selection item">
-                <button class="item">Color</button>
-                <button class="item">Rainbow Mode</button>
-                <button class="item">Eraser</button>
-                <button class="item">Clear</button>
-                <input type="range" class="item">
+                <input type="color" value="#FF517A" class="item" id="color-selection">
+                <button class="item btn">Color</button>
+                <button class="item btn">Rainbow Mode</button>
+                <button class="item btn">Eraser</button>
+                <button class="item btn">Clear</button>
+                <div class="slider">
+                    <p class="slider-resolution item" id=""></p>
+                    <input type="range" class="item">
+                </div>
             </div>
             <div class="canvas"></div>
         </div>
