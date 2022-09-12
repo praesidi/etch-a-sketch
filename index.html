@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <title>Etch-a-Sketch</title>
 </head>
 <body>
@@ -20,21 +19,26 @@
     <main class="main">
         <div class="container">
             <div class="interface">
-                <input type="color" value="#6C8091" class="item" id="color-selection">
-                <button class="item btn">Color</button>
-                <button class="item btn">Rainbow Mode</button>
-                <button class="item btn">Eraser</button>
-                <button class="item btn">Clear</button>
+                <input type="color" value="#6C8091" id="colorSelection">
+                <button class="btn">Color</button>
+                <button class="btn">Rainbow Mode</button>
+                <button class="btn">Eraser</button>
+                <button class="btn">Clear</button>
                 <div class="slider-box">
-                    <p class="slider-resolution item" id=""></p>
-                    <input type="range" min="1" max="64" value="16" class="slider item">
+                    <p id="sliderValue">16 x 16</p>
+                    <input type="range" min="1" max="64" value="16" class="slider" 
+                    oninput="showSliderValue(this.value)">
                 </div>
             </div>
             <div class="canvas"></div>
         </div>
     </main>
     <footer class="footer">
-        <p class="copyright">© Made by Praesidi for The Odin Project</p>
+        <p class="copyright">© Made by <a href="https://github.com/Praesidi" 
+        class="link" target="_blank">Praesidi</a> for <a href="https://www.theodinproject.com/" 
+        class="link" target="_blank">The Odin Project</a></p>
     </footer>
 </body>
 </html>
+
+<!--oninput="showSliderValue(this.value)"-->

@@ -1,6 +1,6 @@
 body {
     background-color: #F3F5F4;
-    background-image: url("train-bg.gif");
+    background-image: url("img/train-bg.gif");
     background-repeat: no-repeat;
     background-position: top right;
     background-size: cover;
@@ -28,11 +28,12 @@ body {
 
 .container {
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     margin: 50px auto;
 }
 
-#color-selection {
+#colorSelection {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -44,7 +45,11 @@ body {
     background-color: transparent;
 }
 
-#color-selection::-webkit-color-swatch {
+#colorSelection:hover {
+    scale: 1.05;
+}
+
+#colorSelection::-webkit-color-swatch {
     border-radius: 50%;
     border: none;
     box-shadow: 0px 0px 4px 3px #6C8091;
@@ -56,6 +61,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    /*flex-wrap: nowrap;*/
 }
 
 .btn {
@@ -63,6 +69,7 @@ body {
     height: 40px;
     border: 2px solid #3F495B;
     background-color: #B9CFDA;
+    margin: 10px auto; /*add margin when page is */
     color: #5C5F82;
     font-size: 24px;
     font-family: 'VT323', monospace;
@@ -72,18 +79,26 @@ body {
     background-color: #6C8091;
     color: #B9CFDA;
     border: none;
-    scale: 1.05;
+    scale: 1.1;
 }
 
 .btn:active {
     background-color: #6C8091;
     color: #B9CFDA;
     border: none;
-    scale: 0.95;
+    scale: 1;
 }
 
 .slider-box {
     width: 100%;
+}
+
+#sliderValue{
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 5px;
+    margin: 0;
 }
 
 .slider {
@@ -93,7 +108,7 @@ body {
     height: 12px;
     background-color: #6C8091;
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
@@ -119,6 +134,7 @@ body {
 }
 
 .canvas {
+    flex-shrink: none;
     width: 500px;
     height: 500px;
     background-color: #FFF;
@@ -140,4 +156,9 @@ body {
     line-height: 40px;
     margin: 0;
     color: #EFB8CC;
+}
+
+.link {
+    text-decoration: none;
+    color: #EA9A95;
 }
