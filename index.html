@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" 
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <title>Etch-a-Sketch</title>
 </head>
 <body>
@@ -18,21 +20,21 @@
     <main class="main">
         <div class="container">
             <div class="interface">
-                <input type="color" value="#FF517A" class="item" id="color-selection">
+                <input type="color" value="#6C8091" class="item" id="color-selection">
                 <button class="item btn">Color</button>
                 <button class="item btn">Rainbow Mode</button>
                 <button class="item btn">Eraser</button>
                 <button class="item btn">Clear</button>
-                <div class="slider">
+                <div class="slider-box">
                     <p class="slider-resolution item" id=""></p>
-                    <input type="range" class="item">
+                    <input type="range" min="1" max="64" value="16" class="slider item">
                 </div>
             </div>
             <div class="canvas"></div>
         </div>
     </main>
     <footer class="footer">
-        <p class="copyright">Made by Praesidi for TheOdinProject</p>
+        <p class="copyright">© Made by Praesidi for The Odin Project</p>
     </footer>
 </body>
 </html>
