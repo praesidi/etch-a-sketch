@@ -20,10 +20,9 @@ body {
     text-align: center;
     -webkit-text-stroke: 1px black; /*обводка у текста*/
     
-    background: -webkit-linear-gradient(45deg, #e2728e, #FDABAD); /*добавляет градиент*/
-    -webkit-background-clip: text; /*применяет градиент только на текст*/
-    -webkit-text-fill-color: transparent; /*делаем текст прозрачным, чтобы было видно 
-    градиент на фоне*/
+    background: -webkit-linear-gradient(45deg, #e2728e, #FDABAD); /*adds gradient*/
+    -webkit-background-clip: text; /*make gradient visible only for text*/
+    -webkit-text-fill-color: transparent; /*makes text transparent, for making gradient visible*/
 }
 
 .container {
@@ -93,9 +92,9 @@ body {
     width: 100%;
 }
 
-#sliderValue{
+#canvasResolutionValue{
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 28px;
     padding: 5px;
     margin: 0;
@@ -133,16 +132,29 @@ body {
     cursor: pointer; /* Cursor on hover */
 }
 
-.canvas {
-    flex-shrink: none;
-    width: 500px;
-    height: 500px;
-    background-color: #FFF;
-    opacity: 97%;
+#canvas {
+    /*flex-shrink: none;*/
+    display: grid;
+    width: 560px;
+    height: 560px;
+    background-color: #6C8091;
+    border: 5px solid #5C5F82;
     border-radius: none;
-    border: 3px solid #EAECF1;
 
+
+    --size: 16; /*at the start is equal to value of slider in html*/
+    gap: 1px;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
 }
+/*---------------EXPERIMENTAL---------------*/
+.pixel {
+    background-color: #F3F5F4;
+	margin:0;
+	padding:0;
+    border-radius: 1px;
+}
+/*--------------EXPERIMENTAL----------------*/
 
 .footer {
     background-color: #3F495B;

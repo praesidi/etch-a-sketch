@@ -20,17 +20,17 @@
         <div class="container">
             <div class="interface">
                 <input type="color" value="#6C8091" id="colorSelection">
-                <button class="btn">Color</button>
-                <button class="btn">Rainbow Mode</button>
-                <button class="btn">Eraser</button>
-                <button class="btn">Clear</button>
+                <button class="btn" id="colorBtn">Color</button>
+                <button class="btn" id="rainbowModeBtn">Rainbow Mode</button>
+                <button class="btn" id="eraserBtn">Eraser</button>
+                <button class="btn" id="clearBtn">Clear</button>
                 <div class="slider-box">
-                    <p id="sliderValue">16 x 16</p>
-                    <input type="range" min="1" max="64" value="16" class="slider" 
-                    oninput="showSliderValue(this.value)">
+                    <p id="canvasResolutionValue">16 x 16</p>
+                    <input type="range" min="1" max="64" value="16"
+                    id="canvasResolutionRange" class="slider" >
                 </div>
             </div>
-            <div class="canvas"></div>
+            <div id="canvas"></div>
         </div>
     </main>
     <footer class="footer">
@@ -41,4 +41,4 @@
 </body>
 </html>
 
-<!--oninput="showSliderValue(this.value)"-->
+<!--oninput="showCanvasResolution(this.value)"-->
