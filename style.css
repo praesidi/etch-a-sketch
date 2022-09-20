@@ -30,7 +30,6 @@ body {
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     margin: 50px auto;
-    min-width: 300px;
 }
 
 #colorSelection {
@@ -115,7 +114,7 @@ body {
     height: 12px;
     background-color: #6C8091;
     outline: none; /* Remove outline */
-    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
@@ -147,9 +146,6 @@ body {
     background-color: #6C8091;
     border: 5px solid #5C5F82;
     border-radius: none;
-
-    /*resize: both;
-    overflow: auto;*/
 
     --size: 16; /*at the start is equal to value of slider in html*/
     gap: 1px;
