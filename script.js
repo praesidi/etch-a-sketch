@@ -11,13 +11,6 @@
 const defaultCanvasSize = 16;
 const defaultColor = "#6C8091";
 
-let draw = false;
-document.body.onmousedown = (e) => {
-    draw = true;
-    e.preventDefault(); //fix a problem when we can't draw bcs drag event appears
-}
-document.body.onmouseup = () => draw = false;
-
 let canvasSize = defaultCanvasSize;
 let color = defaultColor;
 let canvas = document.getElementById("canvas");
@@ -27,6 +20,13 @@ const eraserBtn = document.getElementById ("eraserBtn");
 const rgbBtn = document.getElementById ("rainbowModeBtn");
 const slider = document.getElementById("canvasResolutionRange");
 const modeBtns = {clearBtn, eraserBtn, rgbBtn};
+
+let draw = false;
+canvas.onmousedown = (e) => {
+    draw = true;
+    e.preventDefault(); //fix a problem when we can't draw bcs drag event appears
+}
+canvas.onmouseup = () => draw = false;
 
 function createCanvas(canvasSize){
     canvas.style.setProperty('--size', canvasSize);
@@ -46,13 +46,12 @@ function createCanvas(canvasSize){
     }
 }
 
-function randomColor(){
+function getRandomColor(){
     let randomR = Math.floor(Math.random()*256);
     let randomG = Math.floor(Math.random()*256);
     let randomB = Math.floor(Math.random()*256);
 
     color = `rgb(${randomR}, ${randomG}, ${randomB})`;
-    //console.log(color);
 }
 
 function activateEraser(){
