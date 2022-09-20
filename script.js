@@ -1,25 +1,21 @@
-/*TODO:
-*1. Сделать генерацию полотна по заданному значению (разрешению) !DONE!
-*2. Сделать отображение текушего разрешения над слайдером !DONE!
-*3. Добавить функцию для очистки полотна !DONE!
-4. Добавить функцию для актививации ластика (очистка полотна "попиксельно")
-5. Добавить функцию для актививации RGB мода
-*6. Добавить функцию для рисования заданным цветом !DONE!
-7. Сделать нормальное масштабирование при изменении размера страницы
-*/
-
 const defaultCanvasSize = 16;
-const defaultColor = "#6C8091";
+const defaultColor = '#6C8091';
+const defaultMode = 'colorMode';
 
 let canvasSize = defaultCanvasSize;
 let color = defaultColor;
-let canvas = document.getElementById("canvas");
-const colorPicker = document.getElementById("colorSelection");
-const clearBtn = document.getElementById ("clearBtn");
-const eraserBtn = document.getElementById ("eraserBtn");
-const rgbBtn = document.getElementById ("rainbowModeBtn");
-const slider = document.getElementById("canvasResolutionRange");
-const modeBtns = {clearBtn, eraserBtn, rgbBtn};
+let currentMode = defaultMode;
+let canvas = document.getElementById('canvas');
+const colorPicker = document.getElementById('colorSelection');
+const colorBtn = document.getElementById('colorBtn');
+const clearBtn = document.getElementById('clearBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+const rgbBtn = document.getElementById('rgbBtn');
+const slider = document.getElementById('canvasResolutionRange');
+
+colorBtn.onclick = () => setCurrentMode('colorMode');
+eraserBtn.onclick = () => setCurrentMode('eraserMode');
+rgbBtn.onclick = () => setCurrentMode('rgbMode');
 
 let draw = false;
 canvas.onmousedown = (e) => {
@@ -28,22 +24,72 @@ canvas.onmousedown = (e) => {
 }
 canvas.onmouseup = () => draw = false;
 
-function createCanvas(canvasSize){
+function setCurrentMode(newMode){
+    activateBtn(newMode);
+    currentMode = newMode;
+}
+
+function setCurrentColor(newColor){
+    color = newColor;
+}
+
+function populateCanvas(canvasSize){
     canvas.style.setProperty('--size', canvasSize);
     for (let i = 0; i < canvasSize * canvasSize; i++) {
         const div = document.createElement('div');
         div.classList.add('pixel');
-        //canvas.appendChild(div);
 
         div.addEventListener('mousedown', function(){
-            div.style.setProperty('background-color', color);
+            if (currentMode == 'colorMode'){
+                getCurrentColor();
+                div.style.setProperty('background-color', color);
+            } else if(currentMode == 'rgbMode'){
+                getRandomColor();
+                div.style.setProperty('background-color', color);
+            } else if(currentMode == 'eraserMode') {
+                activateEraser();
+                div.style.setProperty('background-color', color);
+            }
         });
+
         div.addEventListener('mouseover', function(){
             if (!draw) return;
-            div.style.setProperty('background-color', color);
+            if (currentMode == 'colorMode'){
+                getCurrentColor();
+                div.style.setProperty('background-color', color);
+            } else if(currentMode == 'rgbMode'){
+                getRandomColor();
+                div.style.setProperty('background-color', color);
+            }else if(currentMode == 'eraserMode') {
+                activateEraser();
+                div.style.setProperty('background-color', color);
+            }
         });
         canvas.appendChild(div);
     }
+}
+
+function activateBtn(newMode){
+    if (currentMode === 'rgbMode') {
+        rgbBtn.classList.remove('active-btn');
+      } else if (currentMode === 'colorMode') {
+        colorBtn.classList.remove('active-btn');
+      } else if (currentMode === 'eraserMode') {
+        eraserBtn.classList.remove('active-btn');
+      }
+    
+      if (newMode === 'rgbMode') {
+        rgbBtn.classList.add('active-btn');
+      } else if (newMode === 'colorMode') {
+        colorBtn.classList.add('active-btn');
+      } else if (newMode === 'eraserMode') {
+        eraserBtn.classList.add('active-btn');
+      }
+}
+
+function getCurrentColor (){
+    let currentColor = document.getElementById('colorSelection').value;
+    color = currentColor;
 }
 
 function getRandomColor(){
@@ -55,12 +101,12 @@ function getRandomColor(){
 }
 
 function activateEraser(){
-    color = defaultColor;
+    color = '#F3F5F4';
 }
 
 function clearCanvas(){
     canvas.innerHTML = '';
-    createCanvas(canvasSize);
+    populateCanvas(canvasSize);
 }
 
 function showCanvasResolution(canvasSize){
@@ -73,17 +119,18 @@ clearBtn.addEventListener('click', function(){
 });
 
 colorPicker.addEventListener('change', function(){
-    color = document.getElementById("colorSelection").value;
+    let newColor = document.getElementById('colorSelection').value;
+    setCurrentColor(newColor);
 }); 
 
 slider.addEventListener('input', function(){ //create canvas when we change resolution
     canvas.innerHTML = '';
     canvasSize = this.value;
     showCanvasResolution(canvasSize);
-    createCanvas(canvasSize);
-    
+    populateCanvas(canvasSize);
 });
 
 window.onload = () => {
-    createCanvas(defaultCanvasSize);
+    populateCanvas(defaultCanvasSize);
+    activateBtn(defaultMode);
 }
