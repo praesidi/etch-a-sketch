@@ -30,6 +30,7 @@ body {
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     margin: 50px auto;
+    min-width: 300px;
 }
 
 #colorSelection {
@@ -82,6 +83,13 @@ body {
 }
 
 .btn:active {
+    background-color: #6C8091;
+    color: #B9CFDA;
+    border: none;
+    scale: 1;
+}
+
+.active-btn{
     background-color: #6C8091;
     color: #B9CFDA;
     border: none;
