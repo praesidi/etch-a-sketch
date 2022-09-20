@@ -133,7 +133,6 @@ body {
 }
 
 #canvas {
-    /*flex-shrink: none;*/
     display: grid;
     width: 560px;
     height: 560px;
@@ -141,20 +140,21 @@ body {
     border: 5px solid #5C5F82;
     border-radius: none;
 
+    /*resize: both;
+    overflow: auto;*/
 
     --size: 16; /*at the start is equal to value of slider in html*/
     gap: 1px;
     grid-template-columns: repeat(var(--size), 1fr);
     grid-template-rows: repeat(var(--size), 1fr);
 }
-/*---------------EXPERIMENTAL---------------*/
+
 .pixel {
     background-color: #F3F5F4;
 	margin:0;
 	padding:0;
     border-radius: 1px;
 }
-/*--------------EXPERIMENTAL----------------*/
 
 .footer {
     background-color: #3F495B;
