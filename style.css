@@ -99,12 +99,16 @@ body {
     width: 100%;
 }
 
-#canvasResolutionValue{
+#canvasResolutionValue {
     text-align: center;
     font-size: 28px;
     line-height: 28px;
     padding: 5px;
     margin: 0;
+}
+
+#canvasResolutionValue span {
+    background-color: #F3F5F4;
 }
 
 .slider {

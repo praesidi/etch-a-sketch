@@ -110,8 +110,7 @@ function clearCanvas(){
 }
 
 function showCanvasResolution(canvasSize){
-    document.getElementById('canvasResolutionValue').innerText = canvasSize + " x " 
-    + canvasSize;
+    document.getElementById('span').innerText = canvasSize + " x " + canvasSize;
 }
 
 clearBtn.addEventListener('click', function(){
