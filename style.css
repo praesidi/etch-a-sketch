@@ -28,8 +28,9 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
-    margin: 50px auto;
+    justify-content: center;
+    gap: 120px;
+    margin: 50px 20px;
 }
 
 #colorSelection {
@@ -68,7 +69,6 @@ body {
     height: 40px;
     border: 2px solid #3F495B;
     background-color: #B9CFDA;
-    margin: 10px auto; /*add margin when page is */
     color: #5C5F82;
     font-size: 24px;
     font-family: 'VT323', monospace;
@@ -181,4 +181,29 @@ body {
 .link {
     text-decoration: none;
     color: #EA9A95;
+}
+
+
+@media only screen and (max-width:930px){
+    .container {
+        gap: 50px;
+    }
+    
+    .interface > * {
+        margin: 15px;
+    }
+}
+
+@media only screen and (max-width:650px){
+    #canvas {
+        width: 460px;
+        height: 460px;
+    }
+}
+
+@media only screen and (max-width:560px){
+    #canvas {
+        width: 380px;
+        height: 380px;
+    }
 }
