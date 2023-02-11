@@ -1,209 +1,218 @@
 body {
-    background-color: #F3F5F4;
-    background-image: url("img/train-bg.gif");
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: cover;
-    font-family: 'VT323', monospace;
-    margin: 0;
-    height: 100vh;
+  background-color: #f3f5f4;
+  background-image: url('img/train-bg.gif');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  font-family: 'VT323', monospace;
+  margin: 0;
+  height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .gradient-title {
-    font-weight: 400;
-    font-size: 86px;
-    margin: 0;
-    text-align: center;
-    -webkit-text-stroke: 1px black; /*обводка у текста*/
-    
-    background: -webkit-linear-gradient(45deg, #e2728e, #FDABAD); /*adds gradient*/
-    -webkit-background-clip: text; /*make gradient visible only for text*/
-    -webkit-text-fill-color: transparent; /*makes text transparent, for making gradient visible*/
+  font-weight: 400;
+  font-size: 86px;
+  margin: 0;
+  text-align: center;
+  -webkit-text-stroke: 1px black; /*обводка у текста*/
+
+  background: -webkit-linear-gradient(
+    45deg,
+    #e2728e,
+    #fdabad
+  ); /*adds gradient*/
+  -webkit-background-clip: text; /*make gradient visible only for text*/
+  -webkit-text-fill-color: transparent; /*makes text transparent, for making gradient visible*/
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-    gap: 120px;
-    margin: 50px 20px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 120px;
+  margin: 50px 20px;
 }
 
 #colorSelection {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100px;
-    height: 100px;
-    border: none;
-    
-    cursor: pointer;
-    background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  border: none;
+
+  cursor: pointer;
+  background-color: transparent;
 }
 
 #colorSelection:hover {
-    scale: 1.05;
+  scale: 1.05;
 }
 
 #colorSelection::-webkit-color-swatch {
-    border-radius: 50%;
-    border: none;
-    box-shadow: 0px 0px 4px 3px #6C8091;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 0px 4px 3px #6c8091;
 }
 
-
 .interface {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    /*flex-wrap: nowrap;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /*flex-wrap: nowrap;*/
 }
 
 .btn {
-    width: 200px;
-    height: 40px;
-    border: 2px solid #3F495B;
-    background-color: #B9CFDA;
-    color: #5C5F82;
-    font-size: 24px;
-    font-family: 'VT323', monospace;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #3f495b;
+  background-color: #b9cfda;
+  color: #5c5f82;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
 }
 
 .btn:hover {
-    background-color: #6C8091;
-    color: #B9CFDA;
-    border: none;
-    scale: 1.1;
+  background-color: #6c8091;
+  color: #b9cfda;
+  border: none;
+  scale: 1.1;
 }
 
 .btn:active {
-    background-color: #6C8091;
-    color: #B9CFDA;
-    border: none;
-    scale: 1;
+  background-color: #6c8091;
+  color: #b9cfda;
+  border: none;
+  scale: 1;
 }
 
-.active-btn{
-    background-color: #6C8091;
-    color: #B9CFDA;
-    border: none;
-    scale: 1;
+.active-btn {
+  background-color: #6c8091;
+  color: #b9cfda;
+  border: none;
+  scale: 1;
 }
 
 .slider-box {
-    width: 100%;
+  width: 100%;
 }
 
 #canvasResolutionValue {
-    text-align: center;
-    font-size: 28px;
-    line-height: 28px;
-    padding: 5px;
-    margin: 0;
+  text-align: center;
+  font-size: 28px;
+  line-height: 28px;
+  padding: 5px;
+  margin: 0;
 }
 
 #canvasResolutionValue span {
-    background-color: #F3F5F4;
+  background-color: #f3f5f4;
 }
 
 .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 12px;
-    background-color: #6C8091;
-    outline: none; /* Remove outline */
-    opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 12px;
+  background-color: #6c8091;
+  outline: none; /* Remove outline */
+  opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
 }
 
 .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
+  opacity: 1; /* Fully shown on mouse-over */
+}
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
-    background: #3F495B; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #3f495b; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-slider-thumb {
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
-    background: #3F495B; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #3f495b; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }
 
 #canvas {
-    display: grid;
-    width: 560px;
-    height: 560px;
-    background-color: #6C8091;
-    border: 5px solid #5C5F82;
-    border-radius: none;
+  display: grid;
+  width: 560px;
+  height: 560px;
+  background-color: #6c8091;
+  border: 5px solid #5c5f82;
+  border-radius: none;
 
-    --size: 16; /*at the start is equal to value of slider in html*/
-    gap: 1px;
-    grid-template-columns: repeat(var(--size), 1fr);
-    grid-template-rows: repeat(var(--size), 1fr);
+  --size: 16; /*at the start is equal to value of slider in html*/
+  gap: 1px;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
 }
 
 .pixel {
-    background-color: #F3F5F4;
-	margin:0;
-	padding:0;
-    border-radius: 1px;
+  background-color: #f3f5f4;
+  margin: 0;
+  padding: 0;
+  border-radius: 1px;
 }
 
 .footer {
-    background-color: #3F495B;
-    padding: 5px 0;
-    margin-top: auto;
+  background-color: #3f495b;
+  padding: 0;
+  margin-top: auto;
 }
 
 .copyright {
-    text-align: center;
-    font-size: 22px;
-    line-height: 40px;
-    margin: 0;
-    color: #EFB8CC;
+  text-align: center;
+  font-size: 22px;
+  line-height: 40px;
+  margin: 0;
+  color: #efb8cc;
 }
 
 .link {
-    text-decoration: none;
-    color: #EA9A95;
+  text-decoration: none;
+  color: #ea9a95;
 }
 
+@media only screen and (max-width: 930px) {
+  .container {
+    gap: 50px;
+  }
 
-@media only screen and (max-width:930px){
-    .container {
-        gap: 50px;
-    }
-    
-    .interface > * {
-        margin: 15px;
-    }
+  .interface > * {
+    margin: 15px;
+  }
 }
 
-@media only screen and (max-width:650px){
-    #canvas {
-        width: 460px;
-        height: 460px;
-    }
+@media only screen and (max-width: 650px) {
+  #canvas {
+    width: 460px;
+    height: 460px;
+  }
 }
 
-@media only screen and (max-width:560px){
-    #canvas {
-        width: 380px;
-        height: 380px;
-    }
+@media only screen and (max-width: 560px) {
+  #canvas {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #canvas {
+    width: 320px;
+    height: 320px;
+  }
 }
